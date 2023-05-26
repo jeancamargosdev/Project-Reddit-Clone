@@ -17,6 +17,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.time.Instant;
 
+
 import static jakarta.persistence.FetchType.LAZY;
 
 @Data
@@ -25,6 +26,7 @@ import static jakarta.persistence.FetchType.LAZY;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Post {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long postId;
@@ -39,7 +41,7 @@ public class Post {
     @Lob
     private String description;
 
-    private Integer voteCount;
+    private Integer voteCount = 0;
 
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "userId", referencedColumnName = "userId")
