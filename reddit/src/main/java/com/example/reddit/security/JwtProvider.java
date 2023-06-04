@@ -17,6 +17,7 @@ public class JwtProvider {
     private final JwtEncoder jwtEncoder;
     @Value("${jwt.expiration.time}")
     private Long jwtExpirationInMillis;
+
     public String generateToken(Authentication authentication) {
         User principal = (User) authentication.getPrincipal();
         return generateTokenWithUserName(principal.getUsername());

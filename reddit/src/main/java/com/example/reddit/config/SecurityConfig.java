@@ -7,6 +7,7 @@ import com.nimbusds.jose.jwk.source.ImmutableJWKSet;
 import com.nimbusds.jose.jwk.source.JWKSource;
 import com.nimbusds.jose.proc.SecurityContext;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -31,6 +32,7 @@ import java.security.interfaces.RSAPublicKey;
 
 @Configuration
 //@AllArgsConstructor Se deixar essa anotação dá problema
+@RequiredArgsConstructor
 public class SecurityConfig {
 
     @Value("${jwt.public.key}")
