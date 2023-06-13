@@ -45,6 +45,5 @@ export class SignUpComponent implements OnInit {
       subscribe(data => {
         console.log(data);
       });
-
     }
 }
