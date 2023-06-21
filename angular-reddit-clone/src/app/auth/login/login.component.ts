@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginRequestPayload } from './login.request.payload';
 import { AuthService } from '../shared/auth.service';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { throwError } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -13,18 +14,12 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
-  // loginForm?: FormGroup;
   loginRequestPayload: LoginRequestPayload;
-  isError?: boolean;
-  registerSuccessMessage?: string;
+  registerSuccessMessage: string;
+  isError: boolean;
  
   constructor(private authService: AuthService, private activatedRoute: ActivatedRoute, private router: Router, private toastr: ToastrService) {
-    this.loginForm = new FormGroup({
-      username: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required)
-    })
-
-    this.loginRequestPayload = {
+       this.loginRequestPayload = {
       username: '',
       password: ''
     };
@@ -48,16 +43,18 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.loginRequestPayload.username = this.loginForm.get('username')?.value;
-    this.loginRequestPayload.password = this.loginForm.get('password')?.value;
+    this.loginRequestPayload.username = this.loginForm.get('username').value;
+    this.loginRequestPayload.password = this.loginForm.get('password').value;
 
     this.authService.login(this.loginRequestPayload).subscribe(data => {
+      console.log('Login successfull teste');
       if (data) {
         this.isError = false;
-        this.router.navigateByUrl('/');
+        this.router.navigateByUrl('');
         this.toastr.success('Login Successful');
       } else {
         this.isError = true;
+        throwError(Error);
       }
     });
   }
