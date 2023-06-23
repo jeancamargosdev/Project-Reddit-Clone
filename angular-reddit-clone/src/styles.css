@@ -1,4 +1,4 @@
-/* html{    
+ html{    
     padding: 0;
     height: 100%;  
   }
@@ -7,10 +7,6 @@
     height: 100%; 
   }
   
-  input.ng-invalid.ng-touched {
-    border: 1px solid red;
-  }*/
-
   input.ng-invalid.ng-touched{
     border: 1px solid red;    
 }
