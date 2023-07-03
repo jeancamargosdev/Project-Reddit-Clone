@@ -11,6 +11,8 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   getAllPosts(): Observable<Array<PostModel>> {
-    return this.http.get<Array<PostModel>>('http://localhost:8080/api/posts/');
+   console.log('teste de post método getAllPosts dentro de post.service.ts');
+   return this.http.get<Array<PostModel>>('http://localhost:8080/api/posts');
+    // return this.http.get<Array<PostModel>>('/api/posts');
   }
 }

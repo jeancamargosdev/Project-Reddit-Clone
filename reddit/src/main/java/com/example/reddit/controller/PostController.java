@@ -1,5 +1,6 @@
 package com.example.reddit.controller;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import com.example.reddit.dto.PostRequest;
 import com.example.reddit.dto.PostResponse;
 import com.example.reddit.service.PostService;
@@ -22,7 +23,6 @@ import static org.springframework.http.ResponseEntity.status;
 @RequestMapping("/api/posts")
 @AllArgsConstructor
 public class PostController {
-
     private final PostService postService;
 
     @PostMapping
@@ -33,6 +33,7 @@ public class PostController {
 
     @GetMapping
     public ResponseEntity<List<PostResponse>> getAllPosts() {
+        System.out.println("fui chamado dentro de getAllPosts dentro do PostController");
         return status(HttpStatus.OK).body(postService.getAllPosts());
     }
 
