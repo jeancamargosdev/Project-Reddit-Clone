@@ -11,10 +11,12 @@
             <div class="d-flex flex-column votebox">
               <div class="p-2">
                 <!-- <fa-icon (click)="upvotePost()" class="upvote" [icon]="faArrowUp" [style.color]="upvoteColor"></fa-icon> -->
+                <fa-icon  class="upvote" [icon]="faArrowUp"></fa-icon>
               </div>
               <div class="p-2 votecount">{{post.voteCount}}</div>
               <div class="p-2">
                 <!-- <fa-icon (click)="downvotePost()" class="downvote" [icon]="faArrowDown" [style.color]="downvoteColor">                </fa-icon> -->
+                <fa-icon  class="downvote" [icon]="faArrowDown" >                </fa-icon>
               </div>
             </div>
           </div>
@@ -36,7 +38,7 @@
             <hr />
             <span>
               <a class="btnCommments" role="button">
-                <!-- <fa-icon [icon]="faComments"></fa-icon> -->
+                <fa-icon [icon]="faComments"></fa-icon>
                 Comments({{post.commentCount}})
               </a>
               <!-- <button class="login" (click)="goToPost(post.id)">
