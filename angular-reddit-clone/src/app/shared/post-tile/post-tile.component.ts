@@ -12,8 +12,7 @@ export class PostTileComponent implements OnInit {
   
   posts: Array<PostModel> = [];
 
-  faArrowUp = faArrowUp;
-  faArrowDown = faArrowDown;
+
   faComments = faComments;
 
   constructor(private postService: PostService){
