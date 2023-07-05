@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SubredditModel } from 'src/app/subreddit/subreddit-response';
+import { SubredditModel } from 'src/app/subreddit/subreddit.response';
 import { SubredditService } from 'src/app/subreddit/subreddit.service';
 
 @Component({
@@ -8,21 +8,20 @@ import { SubredditService } from 'src/app/subreddit/subreddit.service';
   styleUrls: ['./subreddit-side-bar.component.css']
 })
 export class SubredditSideBarComponent implements OnInit {
-
   subreddits: Array<SubredditModel> = [];
   displayViewAll: boolean;
 
   constructor(private subredditService: SubredditService) {
     this.subredditService.getAllSubreddits().subscribe(data => {
-      if (data.length >= 4) {
+      if (data.length > 3) {
         this.subreddits = data.splice(0, 3);
         this.displayViewAll = true;
       } else {
         this.subreddits = data;
       }
     });
-  } 
-  
-  ngOnInit(): void {
   }
+
+  ngOnInit(): void { }
+
 }

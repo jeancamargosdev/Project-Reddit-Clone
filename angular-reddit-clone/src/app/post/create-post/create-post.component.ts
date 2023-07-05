@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormControl } from '@angular/forms';
-import { SubredditModel } from 'src/app/subreddit/subreddit-response';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CreatePostPayload } from './create-post.payload';
+import { SubredditModel } from 'src/app/subreddit/subreddit.response';
 import { Router } from '@angular/router';
 import { PostService } from 'src/app/shared/post.service';
 import { SubredditService } from 'src/app/subreddit/subreddit.service';
-import { CreatePostPayload } from './create-post.payload';
 import { throwError } from 'rxjs';
 
 @Component({

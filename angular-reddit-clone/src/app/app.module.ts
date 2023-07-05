@@ -13,7 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HomeComponent } from './home/home.component';
 import { TokenInterceptor } from './token-interceptor';
-import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PostTileComponent } from './shared/post-tile/post-tile.component';
 import { VoteButtonComponent } from './shared/vote-button/vote-button.component';
 import { SideBarComponent } from './shared/side-bar/side-bar.component';
@@ -36,7 +36,7 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     SubredditSideBarComponent,
     CreateSubredditComponent,
     CreatePostComponent,
-    ListSubredditsComponent,
+    ListSubredditsComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +47,7 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     FontAwesomeModule,
-    EditorModule,
+    EditorModule
   ],
   providers: [
     {

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { SubredditModel } from '../subreddit-response';
-import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { SubredditModel } from '../subreddit.response';
 import { SubredditService } from '../subreddit.service';
+import { Router } from '@angular/router';
 import { throwError } from 'rxjs';
 
 @Component({
@@ -43,6 +43,8 @@ export class CreateSubredditComponent implements OnInit {
       this.router.navigateByUrl('/list-subreddits');
     }, error => {
       throwError(error);
+      console.log('Aconteceu um erro dentro do método createSubreddit do create-sbreddit.component.ts');
+
     })
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SubredditModel } from '../subreddit-response';
+import { SubredditModel } from '../subreddit.response';
 import { SubredditService } from '../subreddit.service';
 import { throwError } from 'rxjs';
 
@@ -17,6 +17,7 @@ export class ListSubredditsComponent implements OnInit {
     this.subredditService.getAllSubreddits().subscribe(data => {
       this.subreddits = data;
     }, error => {
+      console.log('Aconteceu um erro dentro do create-sbreddit.component.ts');
       throwError(error);
     })
   }

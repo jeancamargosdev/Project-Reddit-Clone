@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PostModel } from '../post-model';
-import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-vote-button',
@@ -8,16 +9,12 @@ import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./vote-button.component.css']
 })
 export class VoteButtonComponent implements OnInit {
-
+  
   @Input() post: PostModel;
   faArrowUp = faArrowUp;
   faArrowDown = faArrowDown;
 
-  constructor() {
-  }
-
-  ngOnInit() {
-
+  ngOnInit(): void {
   }
 
 }
