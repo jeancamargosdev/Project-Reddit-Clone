@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CreatePostPayload } from './create-post.payload';
-import { SubredditModel } from 'src/app/subreddit/subreddit.response';
+import { SubredditModel } from 'src/app/subreddit/subreddit-response';
 import { Router } from '@angular/router';
 import { PostService } from 'src/app/shared/post.service';
 import { SubredditService } from 'src/app/subreddit/subreddit.service';
@@ -35,8 +35,8 @@ export class CreatePostComponent implements OnInit {
       url: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
     });
+    
     this.subredditService.getAllSubreddits().subscribe((data) => {
-      console.log('método getAllSubreddits dentro de create-post.component.ts chamado');
       this.subreddits = data;
     }, error => {
       throwError(error);

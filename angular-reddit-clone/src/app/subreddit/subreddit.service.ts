@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { SubredditModel } from './subreddit.response';
+import { SubredditModel } from './subreddit-response';
 import { Observable } from 'rxjs';
 
 @Injectable({

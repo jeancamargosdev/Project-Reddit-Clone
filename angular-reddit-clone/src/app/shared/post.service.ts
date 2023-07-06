@@ -12,19 +12,20 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   getAllPosts(): Observable<Array<PostModel>> {
-   console.log('teste de post método getAllPosts dentro de post.service.ts');
+   console.log('Método getAllPosts dentro de post.service.ts chamado');
    return this.http.get<Array<PostModel>>('http://localhost:8080/api/posts');
-    // return this.http.get<Array<PostModel>>('/api/posts');
   }
+
   createPost(postPayload: CreatePostPayload): Observable<any> {
+    console.log('Método createPost dentro de post.service.ts chamado');
     return this.http.post('http://localhost:8080/api/posts', postPayload);
   }
 
   getPost(id: number): Observable<PostModel> {
-    return this.http.get<PostModel>('http://localhost:8080/api/posts' + id);
+    return this.http.get<PostModel>('http://localhost:8080/api/posts/' + id);
   }
 
   getAllPostsByUser(name: string): Observable<PostModel[]> {
-    return this.http.get<PostModel[]>('http://localhost:8080/api/posts/by-user' + name);
+    return this.http.get<PostModel[]>('http://localhost:8080/api/posts/by-user/' + name);
   }
 }
