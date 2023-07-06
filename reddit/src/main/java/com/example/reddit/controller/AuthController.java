@@ -1,5 +1,6 @@
 package com.example.reddit.controller;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import com.example.reddit.dto.AuthenticationResponse;
 import com.example.reddit.dto.LoginRequest;
 import com.example.reddit.dto.RefreshTokenRequest;
@@ -50,6 +51,7 @@ public class AuthController {
 
     @PostMapping("/logout")
     public ResponseEntity<String> logout(@Valid @RequestBody RefreshTokenRequest refreshTokenRequest) {
+        System.out.println("Metodo logout chamado");
         refreshTokenService.deleteRefreshToken(refreshTokenRequest.getRefreshToken());
         return ResponseEntity.status(OK).body("Refresh Token Deleted Successfully!!");
     }

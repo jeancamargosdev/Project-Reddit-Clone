@@ -20,6 +20,7 @@ export class TokenInterceptor implements HttpInterceptor {
         if (req.url.indexOf('refresh') !== -1 || req.url.indexOf('login') !== -1) {
             return next.handle(req);
         }
+        
         const jwtToken = this.authService.getJwtToken();
 
         if (jwtToken) {
