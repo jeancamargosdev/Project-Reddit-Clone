@@ -10,6 +10,7 @@ export class SubredditService {
   constructor(private http: HttpClient) { }
 
   getAllSubreddits(): Observable<Array<SubredditModel>> {
+    console.log('método getAllSubreddits dentro subreddit.servite.ts chamado');
     return this.http.get<Array<SubredditModel>>('http://localhost:8080/api/subreddit');
   }
 
